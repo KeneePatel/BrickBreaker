@@ -22,6 +22,7 @@ __meta__ = {
 }
 
 [node name="Paddle" type="KinematicBody2D" parent="."]
+modulate = Color( 0.996078, 0.866667, 0.866667, 1 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Paddle"]
@@ -33,6 +34,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
+visible = false
 position = Vector2( 240, 800 )
 shape = SubResource( 2 )
 __meta__ = {
@@ -40,6 +42,7 @@ __meta__ = {
 }
 
 [node name="Ball" type="RigidBody2D" parent="."]
+modulate = Color( 1, 0.501961, 0.501961, 1 )
 mode = 2
 gravity_scale = 0.0
 can_sleep = false
@@ -57,6 +60,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+visible = false
 position = Vector2( 240, 760 )
 shape = SubResource( 1 )
 __meta__ = {
