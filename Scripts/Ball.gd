@@ -1,11 +1,10 @@
-extends Area2D
-
-var vel : float = 0
-var direction : Vector2 = Vector2()
+extends RigidBody2D
 
 func _ready():
-	direction = Vector2(-1, 1)
-	vel = 2.6
+	set_friction(0)
+	set_bounce(1)
 
-func _process(delta):
-	position += direction * vel * delta * 60
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
