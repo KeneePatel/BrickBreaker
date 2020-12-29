@@ -37,10 +37,13 @@ __meta__ = {
 
 [node name="Paddle" type="KinematicBody2D" parent="."]
 modulate = Color( 0.996078, 0.866667, 0.866667, 1 )
+position = Vector2( 240, 800 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Paddle"]
-position = Vector2( 240, 800 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -49,14 +52,21 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
 visible = false
-position = Vector2( 240, 800 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Anchor" type="Position2D" parent="Paddle"]
+position = Vector2( -1.52588e-05, 39.9999 )
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
 [node name="Ball" type="RigidBody2D" parent="."]
 modulate = Color( 1, 0.501961, 0.501961, 1 )
+position = Vector2( 240, 760 )
 mode = 2
 physics_material_override = SubResource( 6 )
 gravity_scale = 0.0
@@ -67,9 +77,11 @@ linear_velocity = Vector2( 200, -200 )
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Ball"]
-position = Vector2( 240, 760 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -78,13 +90,15 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 visible = false
-position = Vector2( 240, 760 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Walls" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Collision" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 0, 880, -80, 880, -80, -80, 560, -80, 560, 880, 480, 880, 480, 0, 0, 0 )

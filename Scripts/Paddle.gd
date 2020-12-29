@@ -1,12 +1,15 @@
 extends KinematicBody2D
 
 var vel : float = 1
-const max_displacement : int = 192
+const max_displacement : int = 200
 
-func _process(delta):
+func _ready():
+	set_physics_process(true)
+
+func _physics_process(delta):
 	position.x += vel * delta * 60
 	
-	if position.x <= max_displacement and position.x >= -max_displacement:
+	if position.x <= 240+max_displacement and position.x >= 240-max_displacement:
 		if Input.is_action_pressed("ui_left"):
 			vel = -5
 		elif Input.is_action_pressed("ui_right"):
@@ -16,13 +19,13 @@ func _process(delta):
 			elif vel < 0: vel += 0.25
 	else:
 		vel = 0
-		if position.x <= max_displacement:
+		if position.x <= 240+max_displacement:
 			position.x += 1
 		else:
 			position.x -= 1
-			
-	if InputEventScreenTouch:
-		print()
+
+#	if InputEventScreenTouch:
+#		print()
 
 #func _input(event):
 #	if event is InputEventMouseButton and event.position.x < 240:
