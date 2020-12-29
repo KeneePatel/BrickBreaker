@@ -4,7 +4,8 @@ func _ready():
 	set_friction(0)
 	set_bounce(1)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	var body = get_colliding_bodies()
+	if !body.empty():
+		if body[0].is_in_group("Bricks"):
+			body[0].queue_free()
