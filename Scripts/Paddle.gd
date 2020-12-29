@@ -24,10 +24,10 @@ func _process(delta):
 	if InputEventScreenTouch:
 		print()
 
-func _input(event):
-	if event is InputEventMouseButton and event.position.x < 240:
-		vel = -5
-		print(event.position)
-	if event is InputEventMouseButton and event.position.x > 240:
-		vel = +5
-		print(event.position)
+#func _input(event):
+#	if event is InputEventMouseButton and event.position.x < 240:
+#		vel = -5
+#		print(event.position)
+#	if event is InputEventMouseButton and event.position.x > 240:
+#		vel = +5
+#		print(event.position)

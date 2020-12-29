@@ -1,10 +1,6 @@
 extends RigidBody2D
 
-func _ready():
-	set_friction(0)
-	set_bounce(1)
-
-func _process(delta):
+func _process(_delta):
 	var body = get_colliding_bodies()
 	if !body.empty():
 		if body[0].is_in_group("Bricks"):
