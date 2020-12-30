@@ -20,3 +20,6 @@ func _physics_process(delta):
 			#print("unit Direction: ", direction.normalized()) # unit vector for direction
 			var velocity = direction.normalized()*min(speed + speed_up, max_speed*delta)*60
 			set_linear_velocity(velocity)
+	if get_position().y > 860:
+		print("ball is dead.")
+		queue_free()
